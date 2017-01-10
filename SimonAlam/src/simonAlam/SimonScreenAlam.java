@@ -10,7 +10,7 @@ import gui.components.Visible;
 public class SimonScreenAlam extends ClickableScreen implements Runnable {
 
 	private static TextLabel label;
-	private ButtonInterfaceAlam [] buttonInterface;
+	private static ButtonInterfaceAlam [] button;
 	private static ProgressInterfaceAlam progress;
 	private static ArrayList<MoveInterfaceAlam> sequence;
 	private static int roundNumber;
@@ -46,8 +46,12 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 	}
 
 	private static MoveInterfaceAlam randomMove() {
-		// TODO Auto-generated method stub
-		return null;
+		int select = (int) (Math.random()*button.length);
+		while(select == lastSelectedButton){
+			select = (int) (Math.random()*button.length);
+		}
+		lastSelectedButton = select;
+		return new partnerInHerePlease.Move(button[select]);
 	}
 
 	private static ProgressInterfaceAlam getProgress() {
@@ -58,7 +62,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 	/**
 	Placeholder until partner finishes implementation of ProgressInterface
 	*/
-	private static void addButtons() {
+	private static void addButtons(int noOfButtons) {
 		// TODO Auto-generated method stub
 		
 	}
