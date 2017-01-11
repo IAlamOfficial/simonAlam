@@ -8,6 +8,8 @@ import gui.ClickableScreen;
 import gui.components.Action;
 import gui.components.TextLabel;
 import gui.components.Visible;
+import simonAlam.ButtonInterfaceAlam;
+import simonAlam.MoveInterfaceAlam;
 
 public class SimonScreenAlam extends ClickableScreen implements Runnable {
 
@@ -31,7 +33,6 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		label.setText("");
 	    nextRound();
 	}
-
 	public static void initAllObjects(ArrayList<Visible> viewObjects) {
 		addButtons(viewObjects);
 		progress = getProgress();
@@ -42,7 +43,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		sequence.add(randomMove());
 		sequence.add(randomMove());
 		roundNumber = 0;
-		//check with Nockles
+		
 		
 		viewObjects.add((Visible) progress);
 		viewObjects.add(label);
@@ -87,6 +88,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		    			}
 		    			if(sequenceIndex == sequence.size()){
 		    				Thread nextRound = new Thread(SimonScreenAlam.this);
+		    				//check with Nockles
 							nextRound.start(); 
 		    			}
 		    		}
@@ -97,7 +99,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		}
 	}
 	private static void gameOver() {
-		// TODO Auto-generated method stub
+		ProgressInterfaceAlam.gameOver();
 		
 	}
 
@@ -124,19 +126,43 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 	 * Placeholder until partner finishes implementation of ProgressInterface
 	 */
 
-	@Override
-	public void initAllObjects(List<Visible> viewObjects) {
-		// TODO Auto-generated method stub
-
-	}
-
 	private void playSequence() {
-		// TODO Auto-generated method stub
+		ButtonInterfaceAlam b = null;
+		for(MoveInterfaceAlam i:  sequence){
+			if(b != null){
+				b.dim();
+				b = i.getButton();
+				b.highlight();
+				int sleepTime = 0;
+				if(roundNumber >= 15){
+					sleepTime = 500;		
+				}else if(roundNumber >= 10){
+					sleepTime = 1000;
+				}else if(roundNumber >= 5){
+					sleepTime = 2000;
+				}else{
+					sleepTime = 3000;
+				}
+				try{
+					Thread.sleep(sleepTime);
+				}
+				catch(InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+			}
+		}
+		b.dim();
 		
 	}
 
 	private void changeText(String string) {
-		// TODO Auto-generated method stub
+		try {
+			label.setText(string);
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -151,5 +177,11 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		changeText("Your Turn.");
 		acceptingInput = true;
 		sequenceIndex = 0;
+	}
+
+	@Override
+	public void initAllObjects(List<Visible> arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }

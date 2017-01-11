@@ -6,6 +6,10 @@ public interface ProgressInterfaceAlam {
 
 	void setSequence(int size);
 
+	static void gameOver() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 }

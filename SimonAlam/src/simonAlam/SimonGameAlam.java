@@ -11,12 +11,15 @@ public class SimonGameAlam extends GUIApplication {
 
 	@Override
 	public void initScreen() {
-		// TODO Auto-generated method stub
+		SimonScreenAlam game = new SimonScreenAlam(getWidth(), getHeight());
+		setScreen(game);
 
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		SimonGameAlam game = new SimonGameAlam(800,600);
+		Thread simon = new Thread(game);
+		simon.start();
 
 	}
 
