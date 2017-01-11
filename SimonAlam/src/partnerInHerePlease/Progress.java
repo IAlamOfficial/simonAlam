@@ -18,4 +18,16 @@ public class Progress extends Component implements ProgressInterfaceAlam {
 
 	}
 
+	@Override
+	public void setRoundNumber(int roundNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setSequence(int size) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

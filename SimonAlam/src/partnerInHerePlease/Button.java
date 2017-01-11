@@ -1,7 +1,9 @@
 package partnerInHerePlease;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
+import gui.components.Action;
 import gui.components.Component;
 import simonAlam.ButtonInterfaceAlam;
 
@@ -28,6 +30,42 @@ public class Button extends Component implements ButtonInterfaceAlam {
 	public void update(Graphics2D arg0) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void setColor(Color color) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setX(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setY(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setAction(Action action) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void highlight() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dim() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

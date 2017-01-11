@@ -9,4 +9,10 @@ public class Move implements MoveInterfaceAlam {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public ButtonInterfaceAlam getButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
