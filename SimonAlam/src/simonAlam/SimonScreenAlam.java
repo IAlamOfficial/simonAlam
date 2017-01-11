@@ -13,14 +13,14 @@ import simonAlam.MoveInterfaceAlam;
 
 public class SimonScreenAlam extends ClickableScreen implements Runnable {
 
-	private static TextLabel label;
-	private static ButtonInterfaceAlam[] button;
-	private static ProgressInterfaceAlam progress;
-	private static ArrayList<MoveInterfaceAlam> sequence;
-	private static int roundNumber;
-	private static boolean acceptingInput;
-	private static int sequenceIndex;
-	private static int lastSelectedButton;
+	private  TextLabel label;
+	private  ButtonInterfaceAlam[] button;
+	private  ProgressInterfaceAlam progress;
+	private  ArrayList<MoveInterfaceAlam> sequence;
+	private  int roundNumber;
+	private  boolean acceptingInput;
+	private  int sequenceIndex;
+	private  int lastSelectedButton;
 
 	public SimonScreenAlam(int width, int height) {
 		super(width, height);
@@ -33,7 +33,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		label.setText("");
 	    nextRound();
 	}
-	public static void initAllObjects(ArrayList<Visible> viewObjects) {
+	public  void initAllObjects(ArrayList<Visible> viewObjects) {
 		addButtons(viewObjects);
 		progress = getProgress();
 		label = new TextLabel(130, 230, 300, 40, "Let's play Simon!");
@@ -49,7 +49,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		viewObjects.add(label);
 	}
 
-	private static void addButtons(ArrayList<Visible> viewObjects) {
+	private  void addButtons(ArrayList<Visible> viewObjects) {
 		int numberOfButtons = 6;
 		Color[] colors = { Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.MAGENTA };
 		button = new ButtonInterfaceAlam[numberOfButtons];
@@ -88,7 +88,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		    			}
 		    			if(sequenceIndex == sequence.size()){
 		    				Thread nextRound = new Thread(SimonScreenAlam.this);
-		    				//check with Nockles
+		    				//check with teacher
 							nextRound.start(); 
 		    			}
 		    		}
@@ -98,17 +98,17 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		    viewObjects.add(button[i]);
 		}
 	}
-	private static void gameOver() {
+	private  void gameOver() {
 		ProgressInterfaceAlam.gameOver();
 		
 	}
 
-	private static ButtonInterfaceAlam getAButton() {
+	private  ButtonInterfaceAlam getAButton() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	private static MoveInterfaceAlam randomMove() {
+	private  MoveInterfaceAlam randomMove() {
 		int select = (int) (Math.random() * button.length);
 		while (select == lastSelectedButton) {
 			select = (int) (Math.random() * button.length);
@@ -117,7 +117,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		return new partnerInHerePlease.Move(button[select]);
 	}
 
-	private static ProgressInterfaceAlam getProgress() {
+	private  ProgressInterfaceAlam getProgress() {
 		// TODO Auto-generated method stub
 		return null;
 	}
