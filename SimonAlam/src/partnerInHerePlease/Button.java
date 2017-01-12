@@ -73,10 +73,10 @@ public class Button extends Component implements ButtonInterfaceAlam {
 
 	@Override
 	public void dim() {
-		col = Color.gray;
+		col2 = Color.gray;
 		highlighted = false;
 		update();
-
+		
 	}
 
 	@Override
