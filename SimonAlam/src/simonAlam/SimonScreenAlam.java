@@ -9,6 +9,7 @@ import gui.components.Action;
 import gui.components.TextLabel;
 import gui.components.Visible;
 import partnerInHerePlease.Button;
+import partnerInHerePlease.Move;
 import partnerInHerePlease.Progress;
 import simonAlam.ButtonInterfaceAlam;
 import simonAlam.MoveInterfaceAlam;
@@ -32,7 +33,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 
 	@Override
 	public void run() {
-		label.setText("");
+		changeText("");
 	    nextRound();
 	}
 
@@ -53,7 +54,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		viewObjects.add(label);
 	}
 
-	private  void addButtons(ArrayList<Visible> viewObjects) {
+	public void addButtons(ArrayList<Visible> viewObjects) {
 		int numberOfButtons = 6;
 		Color[] colors = { Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.MAGENTA };
 		button = new ButtonInterfaceAlam[numberOfButtons];
@@ -71,6 +72,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		    	public void act(){
 		    		if(acceptingInput){
 		    			Thread blink = new Thread(new Runnable(){
+		    				
 		    				public void run(){
 		    					
 		    					b.highlight();
@@ -120,7 +122,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 			select = (int) (Math.random() * button.length);
 		}
 		lastSelectedButton = select;
-		return new partnerInHerePlease.Move(button[select]);
+		return new Move(button[select]);
 	}
 
 	private  ProgressInterfaceAlam getProgress() {
@@ -143,12 +145,10 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 				int sleepTime = 0;
 				if(roundNumber >= 15){
 					sleepTime = 500;		
-				}else if(roundNumber >= 10){
-					sleepTime = 1000;
 				}else if(roundNumber >= 5){
-					sleepTime = 2000;
+					sleepTime = 1000;
 				}else{
-					sleepTime = 3000;
+					sleepTime = 2000;
 				}
 				try{
 					Thread.sleep(sleepTime);
