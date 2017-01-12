@@ -64,11 +64,11 @@ public class Button extends Component implements ButtonInterfaceAlam {
 
 	@Override
 	public void highlight() {
-		if(col != null) col2 = col;
+		if(col != null){
+			col2 = col;
+		}
 		highlighted = true;
 		update();
-//		highlighted = true;
-//		update(); 
 	}
 
 	@Override
@@ -88,15 +88,6 @@ public class Button extends Component implements ButtonInterfaceAlam {
 		arg0.fillOval(0, 0, WIDTH, HEIGHT);
 		arg0.setColor(Color.black);
 		arg0.drawOval(0, 0, WIDTH - 1, HEIGHT - 1);
-//
-//		if(col != null){  
-//			arg0.setColor(col);
-//		}
-//		else{
-//			arg0.setColor(Color.gray);
-//		}
-//		arg0.fillOval(0, 0, WIDTH, HEIGHT);
-//		arg0.drawOval(0, 0, WIDTH - 1 , HEIGHT - 1);
 	}
 
 }
