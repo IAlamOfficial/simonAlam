@@ -2,6 +2,8 @@ package partnerInHerePlease;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Polygon;
+import java.awt.RenderingHints;
 
 import gui.components.Action;
 import gui.components.Component;
@@ -18,7 +20,7 @@ public class Button extends Component implements ButtonInterfaceAlam {
 	private static int count;
 	
 	public Button() {
-		super(70*count, 0, WIDTH, HEIGHT);
+		super(70*count + 50, 300, WIDTH, HEIGHT);
 		count++;
 	}
 
@@ -73,6 +75,7 @@ public class Button extends Component implements ButtonInterfaceAlam {
 
 	@Override
 	public void update(Graphics2D arg0) {
+
 		if(col != null){  
 			arg0.setColor(col);
 		}
