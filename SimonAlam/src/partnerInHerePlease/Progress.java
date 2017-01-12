@@ -41,11 +41,11 @@ public class Progress extends Component implements ProgressInterfaceAlam {
 	public void update(Graphics2D arg0) {
 
 		if(gameOver){
-			arg0.setColor(Color.black);
+			arg0.setColor(Color.yellow);
 			arg0.fillRect(0, 0, WIDTH, HEIGHT);
-			arg0.setColor(Color.white);
-			arg0.drawString("Game Over!", 120, 20);
-			arg0.drawString(sequenceNum, 120, 40);
+			arg0.setColor(Color.black);
+			arg0.drawString("Game Over!", (WIDTH - 45 )/2 , 20);
+			arg0.drawString(sequenceNum, (WIDTH - 55 )/2, 40);
 		}
 		else{
 			arg0.setColor(Color.orange);

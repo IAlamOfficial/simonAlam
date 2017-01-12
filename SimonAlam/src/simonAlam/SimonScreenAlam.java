@@ -56,7 +56,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 
 	public void addButtons(ArrayList<Visible> viewObjects) {
 		int numberOfButtons = 6;
-		Color[] colors = { Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.MAGENTA };
+		Color[] colors = { Color.red, Color.green, Color.yellow, Color.blue, Color.orange, Color.MAGENTA };
 		button = new ButtonInterfaceAlam[numberOfButtons];
 		for(int i = 0; i < numberOfButtons; i++){
 			
@@ -65,7 +65,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		    button[i].setX(100*(i+1));
 		    button[i].setY(100*(i+1));
 		    
-		    final ButtonInterfaceAlam b = button[i];
+		    ButtonInterfaceAlam b = button[i];
 		    b.dim();
 		    
 		    button[i].setAction(new Action(){
