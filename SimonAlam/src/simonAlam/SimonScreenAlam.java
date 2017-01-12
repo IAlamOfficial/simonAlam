@@ -107,8 +107,8 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		    viewObjects.add(button[i]);
 		}
 	}
-	private  void gameOver() {
-		ProgressInterfaceAlam.gameOver();
+	private void gameOver() {
+		progress.gameOver();
 		
 	}
 

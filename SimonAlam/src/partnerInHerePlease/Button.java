@@ -81,8 +81,8 @@ public class Button extends Component implements ButtonInterfaceAlam {
 
 	@Override
 	public void update(Graphics2D arg0) {
-		if(col != null){
-			arg0.setColor(col);
+		if(col2 != null){
+			arg0.setColor(col2);
 		}
 		else arg0.setColor(Color.gray);
 		arg0.fillOval(0, 0, WIDTH, HEIGHT);

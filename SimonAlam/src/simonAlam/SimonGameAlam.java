@@ -1,7 +1,7 @@
 package simonAlam;
 
 import gui.GUIApplication;
-
+import java.awt.Container;
 public class SimonGameAlam extends GUIApplication {
 
 	public SimonGameAlam(int width, int height) {
@@ -13,7 +13,6 @@ public class SimonGameAlam extends GUIApplication {
 	public void initScreen() {
 		SimonScreenAlam game = new SimonScreenAlam(getWidth(), getHeight());
 		setScreen(game);
-
 	}
 
 	public static void main(String[] args) {
