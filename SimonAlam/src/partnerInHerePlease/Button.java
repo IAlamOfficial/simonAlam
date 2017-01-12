@@ -9,6 +9,12 @@ import simonAlam.ButtonInterfaceAlam;
 
 public class Button extends Component implements ButtonInterfaceAlam {
 
+	private Color col;
+	private Action acts;
+	private int width = 65;
+	private int height = 65;
+	private boolean highlighted;
+	
 	public Button(int x, int y, int w, int h) {
 		super(x, y, w, h);
 		// TODO Auto-generated constructor stub
@@ -16,56 +22,62 @@ public class Button extends Component implements ButtonInterfaceAlam {
 
 	@Override
 	public void act() {
-		// TODO Auto-generated method stub
+		acts.act();
 
 	}
 
 	@Override
 	public boolean isHovered(int arg0, int arg1) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void update(Graphics2D arg0) {
-		// TODO Auto-generated method stub
-
+		return  arg0 > getX() && arg0 < getX() + getWidth() && arg1 > getY() && arg1 < getY() + getHeight();
 	}
 
 	@Override
 	public void setColor(Color color) {
-		// TODO Auto-generated method stub
-		
+		this.col = color;
+		update();
 	}
 
 	@Override
 	public void setX(int i) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setY(int i) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setAction(Action action) {
-		// TODO Auto-generated method stub
-		
+		this.acts = action;
+
 	}
 
 	@Override
 	public void highlight() {
-		// TODO Auto-generated method stub
-		
+		highlighted = true;
+		update();
 	}
 
 	@Override
 	public void dim() {
-		// TODO Auto-generated method stub
-		
+		highlighted = false;
+		update();
+
+	}
+
+	@Override
+	public void update(Graphics2D arg0) {
+		if(col != null){  
+			arg0.setColor(col);
+		}
+		else{
+			arg0.setColor(Color.gray);
+		}
+		arg0.fillOval(0, 0, width, height);
+		arg0.drawOval(0, 0, width, height);
 	}
 
 }

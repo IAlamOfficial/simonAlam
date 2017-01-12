@@ -5,14 +5,15 @@ import simonAlam.MoveInterfaceAlam;
 
 public class Move implements MoveInterfaceAlam {
 
-	public Move(ButtonInterfaceAlam button) {
-		// TODO Auto-generated constructor stub
+	private ButtonInterfaceAlam moveButton;
+	
+	public Move(ButtonInterfaceAlam b) {
+		this.moveButton = b;
 	}
 
 	@Override
 	public ButtonInterfaceAlam getButton() {
-		// TODO Auto-generated method stub
-		return null;
+		return moveButton;
 	}
 
 }
