@@ -15,9 +15,11 @@ public class Button extends Component implements ButtonInterfaceAlam {
 	private final static int HEIGHT = 65;
 	private boolean highlighted;
 	
+	private static int count;
+	
 	public Button() {
-		super(0, 0, WIDTH, HEIGHT);
-		// TODO Auto-generated constructor stub
+		super(70*count, 0, WIDTH, HEIGHT);
+		count++;
 	}
 
 	@Override
