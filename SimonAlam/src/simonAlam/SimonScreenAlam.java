@@ -8,6 +8,8 @@ import gui.ClickableScreen;
 import gui.components.Action;
 import gui.components.TextLabel;
 import gui.components.Visible;
+import partnerInHerePlease.Button;
+import partnerInHerePlease.Progress;
 import simonAlam.ButtonInterfaceAlam;
 import simonAlam.MoveInterfaceAlam;
 
@@ -106,8 +108,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 	}
 
 	private  ButtonInterfaceAlam getAButton() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Button();
 	}
 
 	private  MoveInterfaceAlam randomMove() {
@@ -121,7 +122,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 
 	private  ProgressInterfaceAlam getProgress() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Progress();
 	}
 
 	/**

@@ -22,6 +22,4 @@ public class SimonGameAlam extends GUIApplication {
 		simon.start();
 
 	}
-
-
 }

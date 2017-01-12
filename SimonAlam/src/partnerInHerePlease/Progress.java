@@ -1,6 +1,7 @@
 package partnerInHerePlease;
 
 import java.awt.Color;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 
 import gui.components.Component;
@@ -11,9 +12,11 @@ public class Progress extends Component implements ProgressInterfaceAlam {
 	private String roundNum;
 	private String sequenceNum;
 	private boolean gameOver;
+	private static final int WIDTH = 120;
+	private static final int HEIGHT = 50;
 	
-	public Progress(int x, int y, int w, int h) {
-		super(x, y, w, h);
+	public Progress() {
+		super(60, 60, WIDTH, HEIGHT);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -36,22 +39,27 @@ public class Progress extends Component implements ProgressInterfaceAlam {
 
 	@Override
 	public void update(Graphics2D arg0) {
+
 		if(gameOver){
-			arg0.setColor(Color.WHITE);
-			arg0.fillRect(0, 0, 120, 50);
-			arg0.setColor(Color.ORANGE);
+			arg0.setColor(Color.black);
+			arg0.fillRect(0, 0, WIDTH, HEIGHT);
+			arg0.setColor(Color.white);
 			arg0.drawString("Game Over!", 120, 20);
 			arg0.drawString(sequenceNum, 120, 40);
 		}
 		else{
-			arg0.fillRect(0, 0, 120, 50);
+			arg0.setColor(Color.orange);
+			arg0.fillRect(0, 0, WIDTH, HEIGHT);
 			arg0.setColor(Color.black);
-			arg0.drawRect(0, 0, 120, 50);
-			arg0.drawString("Round #: roundNum", 120, 20);
-			arg0.drawString(sequenceNum, 120, 40);
-			
+			arg0.drawRect(0, 0, WIDTH - 1, HEIGHT - 1);
+			if(roundNum !=null && sequenceNum != null){
+				arg0.drawString(roundNum, (WIDTH - 45 )/2, 20);
+				arg0.drawString(sequenceNum, (WIDTH - 55)/2, 40);
+			}
+
 		}
 
 	}
+	
 
 }

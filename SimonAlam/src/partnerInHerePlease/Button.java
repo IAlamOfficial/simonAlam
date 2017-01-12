@@ -11,12 +11,12 @@ public class Button extends Component implements ButtonInterfaceAlam {
 
 	private Color col;
 	private Action acts;
-	private int width = 65;
-	private int height = 65;
+	private final static int WIDTH = 65;
+	private final static int HEIGHT = 65;
 	private boolean highlighted;
 	
-	public Button(int x, int y, int w, int h) {
-		super(x, y, w, h);
+	public Button() {
+		super(0, 0, WIDTH, HEIGHT);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -28,6 +28,7 @@ public class Button extends Component implements ButtonInterfaceAlam {
 
 	@Override
 	public boolean isHovered(int arg0, int arg1) {
+		
 		return  arg0 > getX() && arg0 < getX() + getWidth() && arg1 > getY() && arg1 < getY() + getHeight();
 	}
 
@@ -76,8 +77,8 @@ public class Button extends Component implements ButtonInterfaceAlam {
 		else{
 			arg0.setColor(Color.gray);
 		}
-		arg0.fillOval(0, 0, width, height);
-		arg0.drawOval(0, 0, width, height);
+		arg0.fillOval(0, 0, WIDTH, HEIGHT);
+		arg0.drawOval(0, 0, WIDTH - 1 , HEIGHT - 1);
 	}
 
 }
