@@ -157,7 +157,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 					e.printStackTrace();
 				}
 				
-			
+			 
 		}
 		b.dim();
 		
