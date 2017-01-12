@@ -33,7 +33,9 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		label.setText("");
 	    nextRound();
 	}
-	public  void initAllObjects(ArrayList<Visible> viewObjects) {
+
+	@Override
+	public void initAllObjects(ArrayList<Visible> viewObjects) {
 		addButtons(viewObjects);
 		progress = getProgress();
 		label = new TextLabel(130, 230, 300, 40, "Let's play Simon!");
@@ -179,9 +181,4 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		sequenceIndex = 0;
 	}
 
-	@Override
-	public void initAllObjects(List<Visible> arg0) {
-		// TODO Auto-generated method stub
-		
-	}
 }
