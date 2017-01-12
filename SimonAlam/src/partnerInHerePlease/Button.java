@@ -78,7 +78,7 @@ public class Button extends Component implements ButtonInterfaceAlam {
 		update();
 		
 	}
-
+ 
 	@Override
 	public void update(Graphics2D arg0) {
 		if(col2 != null){
