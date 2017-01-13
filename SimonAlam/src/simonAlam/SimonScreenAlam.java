@@ -108,6 +108,7 @@ public class SimonScreenAlam extends ClickableScreen implements Runnable {
 		}
 	}
 	private void gameOver() {
+		acceptingInput = false;
 		progress.gameOver();
 		
 	}
